@@ -29,7 +29,8 @@
     <div class="container">
         <h2>Galería de gorritos tontos</h2>
         <p class="explanation">Para conseguir la dirección de cada imagen, haz click derecho en cualquiera de ellas y pulsa "Abrir imagen en pestaña
-            nueva"</p>
+            nueva"
+        </p>
         <div id="gallery" class="row"></div>
     </div>
     <!-- /.container -->
@@ -43,9 +44,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script>
-    var folder = "/images";
+    var hats = [
+        "https://upload.wikimedia.org/wikipedia/en/1/1f/Magic_Wizard%27s_Hat_%28icon%29.png",
+        "http://orig08.deviantart.net/e5ba/f/2011/110/5/d/horns_png_by_mysticmorning-d3eg3jh.png",
+        "http://www.tophatrecords.co.uk/images/logo.png",
+        "http://www.cut-outs-cpcheatsbypgees.site11.com/Official%20Club%20Penguin%20Cut-Outs/Head%20Items/Wigs/Mad%20Scientist%20Wig.png",
+        "http://www.officialpsds.com/images/thumbs/Horns-psd106790.png",
+        "http://www.clipartbest.com/cliparts/yio/MGd/yioMGdpeT.png",
+        "https://appstickers-cdn.appadvice.com/1152041296/818812220/4d61539039ee7756362e5262e7163cb0-9.png",
+        "http://vignette1.wikia.nocookie.net/unisonleague/images/b/be/Gear-Fluffy_Bunny_Ears_Render.png/revision/latest?cb=20161115183231"
+    ];
 
-    $.ajax({
+    for (var i = 0; i < hats.length; i++) {
+        $("#gallery").append("<div class='col-md-4'><div class='thumbnail'><img src='" + hats[i] +
+            "' alt='Lights' style='width:100%'></div></div>");
+        console.log(hats[i]);
+    }
+
+    /*$.ajax({
         url: folder,
         success: function (data) {
             $(data).find("a").attr("href", function (i, val) {
@@ -55,7 +71,7 @@
                 }
             });
         }
-    });
+    });*/
 </script>
 
 </html>
